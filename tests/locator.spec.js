@@ -32,26 +32,26 @@ test("Testcase checkout", async ({ page }) => {
 
   const buttonLogin = page.locator("#login-button");
   await buttonLogin.click();
-  //   await page.click('#login-button');
+    //   await page.click('#login-button');
 
   // Verifikasi apakah login berhasil
   await expect(page).toHaveURL(/.*inventory.html/);
-  //   await page.waitForURL('https://www.saucedemo.com/inventory.html');
-  //   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    //   await page.waitForURL('https://www.saucedemo.com/inventory.html');
+    //   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
   // Tambahkan produk ke keranjang
   //   await page.click('button[name="add-to-cart-sauce-labs-backpack"]');
   await page.click('button[id="add-to-cart-sauce-labs-backpack"]');
-  //   const buttonCart = page.locator("#add-to-cart-sauce-labs-backpack");
-  //   await buttonCart.click();
+    //   const buttonCart = page.locator("#add-to-cart-sauce-labs-backpack");
+    //   await buttonCart.click();
   await page.click('button[id="add-to-cart-sauce-labs-onesie"]');
-  //   const buttonCart = page.locator("#add-to-cart-sauce-labs-onesie");
-  //   await buttonCart.click();
+    //   const buttonCart = page.locator("#add-to-cart-sauce-labs-onesie");
+    //   await buttonCart.click();
 
   // Pergi ke halaman keranjang
   await page.click(".shopping_cart_link");
   await expect(page).toHaveURL(/.*cart.html/);
-  //   await expect(page).toHaveURL("https://www.saucedemo.com/cart.html");
+    //   await expect(page).toHaveURL("https://www.saucedemo.com/cart.html");
 
   // Klik tombol checkout
   await page.click("#checkout");
