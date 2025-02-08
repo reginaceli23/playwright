@@ -22,6 +22,7 @@ test("Testcase Login", async ({ page }) => {
 test("Testcase checkout", async ({ page }) => {
   await page.goto("https://www.saucedemo.com/");
 
+  // Proses Login
   const inputUsername = page.locator("#user-name");
   await inputUsername.fill("standard_user");
   await expect(inputUsername).toHaveValue("standard_user");
@@ -40,16 +41,16 @@ test("Testcase checkout", async ({ page }) => {
   //   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
   // Tambahkan produk ke keranjang
-  //   await page.click('button[name="add-to-cart-sauce-labs-backpack"]');
   await page.click('button[id="add-to-cart-sauce-labs-backpack"]');
-  //   const buttonCart = page.locator("#add-to-cart-sauce-labs-backpack");
-  //   await buttonCart.click();
   await page.click('button[id="add-to-cart-sauce-labs-onesie"]');
-  //   const buttonCart = page.locator("#add-to-cart-sauce-labs-onesie");
-  //   await buttonCart.click();
   await page.click('button[id="add-to-cart-sauce-labs-fleece-jacket"]');
-  //   const buttonCart = page.locator("#add-to-cart-sauce-labs-fleece-jacket");
-  //   await buttonCart.click();
+    //   await page.click('button[name="add-to-cart-sauce-labs-backpack"]');
+    //   const buttonCart = page.locator("#add-to-cart-sauce-labs-backpack");
+    //   await buttonCart.click();
+    //   const buttonCart = page.locator("#add-to-cart-sauce-labs-onesie");
+    //   await buttonCart.click();
+    //   const buttonCart = page.locator("#add-to-cart-sauce-labs-fleece-jacket");
+    //   await buttonCart.click();
 
   // Pergi ke halaman keranjang
   await page.click(".shopping_cart_link");
@@ -102,13 +103,13 @@ test("Testcase checkout", async ({ page }) => {
   await expect(page.locator(".complete-header")).toHaveText(
     "Thank you for your order!"
   );
-  // const successMessage = page.locator('.complete-header');
-  // await expect(successMessage).toBeVisible();
-  // await expect(successMessage).toHaveText("Thank you for your order!");
-  // await expect(page).toHaveURL(/checkout-complete.html/);
-  // await expect(page.locator("#checkout_complete_container > h2")).toHaveText(
-  //   "Thank you for your order!"
-  // );
+    // const successMessage = page.locator('.complete-header');
+    // await expect(successMessage).toBeVisible();
+    // await expect(successMessage).toHaveText("Thank you for your order!");
+    // await expect(page).toHaveURL(/checkout-complete.html/);
+    // await expect(page.locator("#checkout_complete_container > h2")).toHaveText(
+    //   "Thank you for your order!"
+    // );
 });
 
 test("Testcase checkout without input information", async ({ page }) => {
@@ -174,7 +175,7 @@ test("Testcase Checkout with cart", async ({ page }) => {
 
   await expect(page.locator(".login_logo")).toBeVisible();
 
-  // Login
+  // Proses Login
   const inputUsername = page.locator("#user-name");
   await inputUsername.fill("standard_user");
   await expect(inputUsername).toHaveValue("standard_user");
