@@ -184,14 +184,14 @@ test("Testcase Checkout with cart", async ({ page }) => {
 test("Checkout without input information", async ({ page }) => {
   // Tambahkan produk ke keranjang
   // Sauce Labs Backpack
-  const Backpack = page.locator("#add-to-cart-sauce-labs-backpack");
-  await Backpack.click();
+  const backpack = page.locator("#add-to-cart-sauce-labs-backpack");
+  await backpack.click();
   // Sauce Labs Onesie
-  const Onesie = page.locator("#add-to-cart-sauce-labs-onesie");
-  await Onesie.click();
+  const onesie = page.locator("#add-to-cart-sauce-labs-onesie");
+  await onesie.click();
   // Sauce Labs Fleece Jacket
-  const Fleece_jacket = page.locator("#add-to-cart-sauce-labs-fleece-jacket");
-  await Fleece_jacket.click();
+  const fleece_jacket = page.locator("#add-to-cart-sauce-labs-fleece-jacket");
+  await fleece_jacket.click();
 
   // Pergi ke halaman keranjang
   const cart = page.locator(".shopping_cart_link");
